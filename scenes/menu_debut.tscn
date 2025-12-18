@@ -1,0 +1,90 @@
+[gd_scene load_steps=11 format=3 uid="uid://sp2m3va32pkc"]
+
+[ext_resource type="Script" uid="uid://cegf60dowdri7" path="res://scripts/menu_debut.gd" id="1_ndvde"]
+[ext_resource type="Texture2D" uid="uid://cm176h5yjh6qt" path="res://assets/decors/slab_1.png" id="1_riivd"]
+[ext_resource type="Texture2D" uid="uid://cp3nx0rx4tb4y" path="res://assets/decors/s.png" id="3_fvbx2"]
+[ext_resource type="Texture2D" uid="uid://bmqehkxh4na5k" path="res://assets/decors/playfr.png" id="3_tnr3c"]
+[ext_resource type="Texture2D" uid="uid://bhiwst385h38f" path="res://assets/decors/o.png" id="4_tnr3c"]
+[ext_resource type="Texture2D" uid="uid://h3n43g5ik38g" path="res://assets/decors/l.png" id="5_tau1h"]
+[ext_resource type="Texture2D" uid="uid://bv0sg53qqbjyj" path="res://assets/decors/e.png" id="6_0641k"]
+[ext_resource type="Texture2D" uid="uid://dbu4xem3vc3q4" path="res://assets/decors/a.png" id="7_aj3ye"]
+[ext_resource type="Texture2D" uid="uid://c2r3hiobsiskt" path="res://assets/decors/i.png" id="8_dk6kg"]
+[ext_resource type="Texture2D" uid="uid://uo4xo3fm4esj" path="res://assets/decors/m.png" id="9_bo3mo"]
+
+[node name="menu_debut" type="CanvasLayer"]
+script = ExtResource("1_ndvde")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="maison" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -187.0
+offset_top = -143.0
+offset_right = 569.0
+offset_bottom = 378.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_riivd")
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.769
+anchor_top = 0.309
+anchor_right = 0.945
+anchor_bottom = 0.752
+offset_left = 0.519897
+offset_top = 0.279968
+offset_right = 0.599976
+offset_bottom = -0.159973
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Playfr" type="Sprite2D" parent="."]
+position = Vector2(1692, 577.25)
+scale = Vector2(7.54688, 7.92969)
+texture = ExtResource("3_tnr3c")
+
+[node name="S" type="Sprite2D" parent="."]
+position = Vector2(167, 255)
+scale = Vector2(6.78125, 6.78125)
+texture = ExtResource("3_fvbx2")
+
+[node name="O" type="Sprite2D" parent="."]
+position = Vector2(340, 430)
+scale = Vector2(6.78125, 6.78125)
+texture = ExtResource("4_tnr3c")
+
+[node name="L" type="Sprite2D" parent="."]
+position = Vector2(522, 283)
+scale = Vector2(6.04688, 6.04688)
+texture = ExtResource("5_tau1h")
+
+[node name="E" type="Sprite2D" parent="."]
+position = Vector2(730, 381)
+scale = Vector2(5.625, 5.625)
+texture = ExtResource("6_0641k")
+
+[node name="A" type="Sprite2D" parent="."]
+position = Vector2(217, 732)
+scale = Vector2(5.90625, 5.90625)
+texture = ExtResource("7_aj3ye")
+
+[node name="I" type="Sprite2D" parent="."]
+position = Vector2(439, 734)
+scale = Vector2(5.9375, 5.9375)
+texture = ExtResource("8_dk6kg")
+
+[node name="M" type="Sprite2D" parent="."]
+position = Vector2(664, 729)
+scale = Vector2(6.125, 6.125)
+texture = ExtResource("9_bo3mo")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

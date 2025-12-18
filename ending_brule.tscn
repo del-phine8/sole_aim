@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://3vm5mcewb0nb"]
+
+[ext_resource type="Texture2D" uid="uid://b27egjo85lqsg" path="res://assets/decors/ending_brule.png" id="1_6k0rx"]
+[ext_resource type="Script" uid="uid://dg54u8kvhsy3" path="res://ending_brule.gd" id="1_w85qx"]
+[ext_resource type="AudioStream" uid="uid://duwmwmvgon38b" path="res://assets/sound/fire_burning_sound.mp3" id="3_gwud4"]
+[ext_resource type="Texture2D" uid="uid://cbr18r0qfuc1d" path="res://assets/decors/backinhouse.png" id="4_fnf2n"]
+
+[node name="ending_brule" type="CanvasLayer"]
+script = ExtResource("1_w85qx")
+
+[node name="photo_end" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_6k0rx")
+
+[node name="feu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_gwud4")
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.725521
+anchor_top = 0.719444
+anchor_right = 0.969792
+anchor_bottom = 0.916667
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="Backinhouse" type="Sprite2D" parent="."]
+position = Vector2(1621, 903)
+scale = Vector2(0.88227, 0.88227)
+texture = ExtResource("4_fnf2n")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

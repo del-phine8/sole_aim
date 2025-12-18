@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dla28xlm6hj7g"]
+
+[ext_resource type="Script" uid="uid://bemw74yckcfy8" path="res://scripts/miaw.gd" id="1_bfx32"]
+[ext_resource type="Texture2D" uid="uid://dwdggqw3qdvig" path="res://assets/decors/pitchette_easteregg.png" id="2_ghj5q"]
+[ext_resource type="AudioStream" uid="uid://knv3disb1w2l" path="res://assets/sound/miaaaaw.mp3" id="3_ek3oe"]
+
+[node name="pitchette" type="CanvasLayer"]
+script = ExtResource("1_bfx32")
+
+[node name="TextureRect1" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -197.0
+offset_top = -51.0
+offset_right = 26.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ghj5q")
+
+[node name="miaw" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ek3oe")

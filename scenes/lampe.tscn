@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://2624jir5kqyi"]
+
+[ext_resource type="Texture2D" uid="uid://c0qhyukq5k85r" path="res://assets/decors/lampe.png" id="1_noys7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sicru"]
+size = Vector2(14.303, 5.81819)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Lampe" type="Sprite2D" parent="."]
+position = Vector2(202, 188)
+scale = Vector2(12.25, 12.25)
+texture = ExtResource("1_noys7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(196.5, 322)
+scale = Vector2(4.125, 4.125)
+shape = SubResource("RectangleShape2D_sicru")

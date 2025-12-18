@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://kucgxkqrk6ru"]
+
+[ext_resource type="Script" uid="uid://bq2rwg0f6m1ht" path="res://scripts/powerup.gd" id="1_406cw"]
+[ext_resource type="Texture2D" uid="uid://b6xtbeig035ih" path="res://assets/animations/power_up.png" id="1_vcqqu"]
+[ext_resource type="AudioStream" uid="uid://u7m6epmdigkt" path="res://assets/sound/powersound.wav" id="2_6cuax"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wh0le"]
+atlas = ExtResource("1_vcqqu")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6cuax"]
+atlas = ExtResource("1_vcqqu")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_to7bl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wh0le")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6cuax")
+}],
+"loop": true,
+"name": &"power_UP",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_406cw"]
+size = Vector2(173, 199)
+
+[node name="powerup" type="Area2D"]
+script = ExtResource("1_406cw")
+
+[node name="powersound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_6cuax")
+volume_db = 3.714
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-8.50876, -12.4016)
+scale = Vector2(4.81359, 4.76449)
+sprite_frames = SubResource("SpriteFrames_to7bl")
+animation = &"power_UP"
+autoplay = "power_UP"
+
+[node name="collisioncan" type="CollisionShape2D" parent="."]
+position = Vector2(-5.5, 20.5)
+shape = SubResource("RectangleShape2D_406cw")
+debug_color = Color(0.952382, 0.219805, 0, 0.42)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

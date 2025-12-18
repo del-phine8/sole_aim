@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://cygf8f46g8dve"]
+
+[ext_resource type="Script" uid="uid://dtdduisifwhu" path="res://scripts/instructions.gd" id="1_dkfqi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bso8b"]
+size = Vector2(173, 82)
+
+[sub_resource type="LabelSettings" id="LabelSettings_dkfqi"]
+
+[node name="Area2D" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(85, 142)
+shape = SubResource("RectangleShape2D_bso8b")
+debug_color = Color(1.39579e-06, 0.63674, 0.401069, 0.42)
+script = ExtResource("1_dkfqi")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = 205.0
+offset_top = 1.0
+offset_right = 245.0
+offset_bottom = 24.0
+text = "\"C\""
+label_settings = SubResource("LabelSettings_dkfqi")
+
+[connection signal="body_entered" from="." to="CollisionShape2D" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="." to="CollisionShape2D" method="_on_area_2d_body_exited"]
